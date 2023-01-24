@@ -1,0 +1,111 @@
+{% extends 'index.html' %}
+{% load static%}
+
+    {% block title %}{{Link.Type}} of {{ Link.Title|capfirst }}- sarkarijob.site{% endblock %}
+    {% block meta-des %}"Important detail of {{Link.Type}} of the {{Link.Title|lower}},Number of Post: ,Notification Date: , Department: "{% endblock %}
+    {% block meta-kw%}"{{Link.Title|lower}}, {{Link.Type}}, number of vacancy of {{Link.Title|lower}}, last date of {{Link.Title|lower}}, regestration fee of {{Link.Title|lower}},general regestration fee of {{Link.Title|lower}}, obc regestration fee of {{Link.Title|lower}}, scandst regestration fee of {{Link.Title|lower}}, {{Link.Type}} of {{Link.Title|lower}}, which state job is {{Link.Title|lower}}, {{Link.Title|lower}} is central or state job, salary of {{Link.Title|lower}}, group of {{Link.Title|lower}}, number of posts in {{Link.Title|lower}}, is {{Link.Title|lower}} good job"{% endblock %}
+    {% block style%}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}">
+    
+    {% endblock %}
+
+    {% block body%}
+
+<div id="jbbody" onclick="navoff()">
+        <div class="jbdiv">
+            <img style="display: block;" src="../static/img/{{Link.imgcode}}.png" alt="{{Link.imgcodee}}">
+        </div>
+        <div class="jbdiv">
+            <span class="jbdark">Name of the Post: </span>
+            <span class="jbtext">{{Link.Title}}</span>
+        </div>
+        <div class="jbdiv">
+            <span class="jbdark">Number of Vacncy: </span>
+            <span class="jbtext">{{Link.Posts}}</span>
+        </div>
+        <div class="jbdiv">
+            <span class="jbdark">Date Realsed:</span>
+            <span class="jbtext">
+                {{Link.date_of_issue}}
+            </span>
+        </div>
+
+
+        {% if Link.Type == 'vacancy' %}
+        
+        <div class="jbdiv">
+            <span class="jbdark">
+                Last Date: 
+            </span>
+            <span class="jbtext">
+                {{Link.last_date}}
+            </span>
+        </div>
+
+        <div class="jbdiv">
+            <span class="jbdark">
+                Regestration fee [gen/obc/sc&st]:    
+            </span>
+            <span class="jbtext">
+                {{Link.rf_gen}}/{{Link.rf_obc}}/{{Link.rf_scnst}}
+            </span>
+        </div>
+
+        {% endif %}
+        <div class="jbdiv">
+            <span class="jbdark">
+                Salary: 
+            </span class="jbtext">
+            <span class="jbtext">
+                {{Link.salary}}</a>
+            </span>
+        </div>
+
+
+        <div class="jbdiv">
+            <span class="jbdark">
+                Qualification: 
+            </span class="jbtext">
+            <span class="jbtext">
+                {{Link.qualification}}</a>
+            </span>
+        </div>
+
+        <div class="jbdiv">
+            <span class="jbdark">
+                Link of {{ Link.Type }}: 
+            </span>
+            <span class="jbtext">
+                <a href="{{Link.url}}">{{Link.url}}</a>
+            </span>
+        </div>
+        
+        <div class="jbdiv">
+            <span class="jbdark">
+                Department: 
+            </span >
+            <span class="jbtext">
+                {{Link.Department}}
+            </span>
+        </div>
+
+        <div class="jbdiv">
+            <span class="jbdark">
+                Region: 
+            </span >
+            <span class="jbtext">
+                {{Link.State}}
+            </span>
+        </div>
+
+        <div class="jbdiv">
+            <span class="jbdark">
+                More info: 
+            </span >
+            <span class="jbtext">
+                <a href="{{Link.url}}">{{Link.url}}</a>
+            </span>
+        </div>
+</div>
+    {% endblock %}

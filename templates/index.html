@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/style.css'%}">
+    <link rel="stylesheet" href="{% static '/responsive.css'%}">
+    <title>{% block title%}{% endblock %}</title>
+    <meta name="description" content={% block meta-des %} {% endblock %}>
+    <meta name="keywords" content={% block meta-kw %} {% endblock %}>
+    {% block style%} 
+    {% endblock%}
+</head>
+
+<body>
+    <div class="navbar">
+        <a href=".." style="height: 5vh"><img style="height: 5vh;" src="{% static 'img/sarkarijob.jpg'%}" alt="sarkarijob"></a>
+        <div>
+            <ul class="maininlineul">
+                <li><a class="navanchor" onclick="underline()" href=".."> Home </a></li>
+                <li><a class="navanchor" onclick="underline()" href=""> About </a></li>
+                <li><a class="navanchor" onclick="underline()" href="">Contact</a></li>
+                <li><a class="navanchor" onclick="underline()" href="">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <img id="responivenav"  onclick="navopen()" src="../static/img/menu.png" alt="">
+    </div>
+
+    <div class="body">
+
+        <ul id="inlineul">
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Privacy Policy</li>
+        </ul>
+
+        {% block body %} {% endblock %}
+
+
+    </div>
+    
+        <script>
+            function navopen(){
+                document.getElementById('inlineul').style.display = 'flex';
+            };
+        
+            function navoff(){
+                document.getElementById('inlineul').style.display = 'none';
+            };
+            </script>
+
+</body>
+</html>

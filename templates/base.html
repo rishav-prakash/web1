@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Latest Government Job Vacancy- sarkarijob.site{% endblock %}
+{% block meta-des %}"Archive of updates released in Government sector job. All Vacancy, All admitcards and All Results of Government job."{% endblock %}
+{% block meta-kw %}"vacancy, Latest-vacancy, government-recruitment, result, government-job-result, sarkariresult, admitcard, government-job-admitcart, government-examination, {{vacancy.0.Title}}, {{vacancy.1.Title}}, {{vacancy.3.Title}}, {{result.0.Title}}, {{result.1.Title}}, {{result.3.Title}}, {{admitcard.0.Title}}, {{admitcard.1.Title}}, {{admitcard.3.Title}}"{% endblock %}
+{% block style%}
+<link rel="stylesheet" href="{% static 'style.css'%}">
+<link rel="stylesheet" href="{% static 'responsive.css'%}">
+<style>
+    .table_row td a{
+    color: rgb(20, 0, 0);
+    font-weight: 700;
+    text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+
+{% block body%}
+        <div class="main1" onclick="navoff()">
+
+            <div class="title">
+                <img src="{% static 'img/vacancy.jpg'%}" class="buttonimg" alt="vacancy">
+                <br><br>
+                <p style="text-align: left; position: sticky; top: 65px;"><a href="archive/vacancy" style="text-decoration: none; padding-left: 20px; color: red; font-weight: 700; font-size: 18px; position: sticky; top: 10px;">View All... </a></p>
+            </div>
+            <div class="anchortags">
+                
+                <table class="table">
+                    {% for i in vacancy %}
+                    <tr class="table_row">
+                        <td><a href="/post/{{i.Title}}"> <span class="spantitle">{% if i.important == True%} ** {% endif %} {{ i.Title }}  </span> </a></td>
+                        <td>Department: {{i.Department}}</td>
+                        <td>Total Post: {{i.Posts}} </td>
+                        <td>Last Date: {{i.last_date}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                
+                
+            
+                
+            </div>
+
+        </div>
+
+        <div class="main">
+
+            <div class="title">
+                <img src="{% static 'img/result.jpg'%}" alt="result" class="buttonimg">
+                <br><br>
+                <p style="text-align: left; position: sticky; top: 65px;"><a href="archive/result" style="text-decoration: none; padding-left: 20px; color: red; font-weight: 700; font-size: 18px; position: sticky; top: 10px;">View All... </a></p>
+            </div>
+            <div class="anchortags">
+                <table class="table">
+                    {% for i in result %}
+                    <tr class="table_row">
+                        <td><a href="/post/{{i.Title}}"> <span class="spantitle"> {{ i.Title }} {% if i.important == True%} ** {% endif %} </span> </a></td>
+                        <td>Department: {{i.Department}}</td>
+                        <td>Total Post: {{i.Posts}} </td>
+                        <td>Notification Date: {{i.date_of_issue}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+        <div class="main">
+
+            <div class="title">                
+                <img src="{% static 'img/admitcard.jpg'%}" alt="admitcard" class="buttonimg">
+                <br><br>
+                <p style="text-align: left; position: sticky; top: 65px;"><a href="archive/admitcard" style="text-decoration: none; padding-left: 20px; color: red; font-weight: 700; font-size: 18px; position: sticky; top: 10px;">View All... </a></p>
+            </div>
+            <div class="anchortags">
+                <table class="table">
+                    {% for i in admitcard %}
+                    <tr class="table_row">
+                        <td><a href="/post/{{i.Title}}"> <span class="spantitle"> {{ i.Title }} {% if i.important == True%} ** {% endif %} </span> </a></td>
+                        <td>Department: {{i.Department}}</td>
+                        <td>Total Post: {{i.Posts}} </td>
+                        <td>Notification Date: {{i.date_of_issue}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+       
+    </div>
+{% endblock %}

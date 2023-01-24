@@ -1,0 +1,276 @@
+
+@keyframes navloading {
+    0%{
+        height: 0vh;
+    }
+    100%{
+        height: 28vh;
+    }
+
+}
+
+
+@media only screen and (max-width: 550px) {
+    .navbar{
+        margin-left: 0px;
+        padding: 0px 0px 0px 0px;
+        height: 7vh;
+        width: 100%;
+    }
+    .table{
+        padding-top: 0; 
+    }
+
+    .table_row{
+        display: grid;
+        font-size: 14px;
+        padding: 40px;
+        border-bottom: 2px solid #0000001f;
+    }
+    .table_row td{
+        padding: 2%;
+        border-bottom: none;
+        text-align: left;
+    }
+    .body {
+        height: 100%;
+        padding: 0%;
+    }
+
+    body {
+        padding: 0%;
+    }
+
+}
+
+
+@media only screen and (max-width: 550px) {
+    #responivenav{
+        display:block;
+        margin-right: 10%;
+    }
+    .maininlineul{
+        display: none;
+    }
+    #inlineul{
+        flex-direction: column;
+        height: 28vh;
+        color: rgb(255, 255, 255);
+        font-size: 19px;
+        text-align: right;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+    }
+
+    #inlineul li{
+        padding: 15px;
+    }
+    #lbtabletop{
+        padding-top: 0px;
+    }
+}
+
+.allLinktable{
+    padding-top: 65px; height: auto;
+}
+
+
+.table_row td .tbspan{
+    font-size: 13px;
+}
+@media only screen and (max-width: 550px) {
+    #responivenav{
+        display:block;
+        margin-right: 10%;
+    }
+    .maininlineul{
+        display: none;
+    }
+    #inlineul{
+        flex-direction: column;
+        height: 28vh;
+        background-color: firebrick;
+        color: rgb(255, 255, 255);
+        font-size: 19px;
+        text-align: right;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+        animation: navloading 0.5s ease-in-out;
+    }
+
+    #inlineul li{
+        padding: 15px;
+    }
+    .jbdark{
+        font-size: 14px;
+    }
+    .jbtext{
+        font-size: 18px;
+    }
+}
+
+
+
+@media only screen and (max-width: 550px) {
+
+    .table{
+        width: 100%;
+        height: 100%;
+    }
+    .table_row{
+        display: grid;
+        border-bottom: 1px solid #00000026;
+        padding: 20px;
+    }
+
+    .table_row td{
+        padding: 8px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .table_row td a{
+        text-decoration: none;
+        color: rgb(27, 43, 73);
+    }
+    
+    .titletd{
+        font-size: 18px;
+    }
+    
+    .allLinktable{
+        text-align: center;
+    }
+    
+    
+    .anchortags{
+        width: 100%;
+        padding-left: 0;
+       
+    }
+    
+    .anchortags .spantitle{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .anchortags .span{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 14px;
+    }
+    
+    .divfortext{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 10px;
+    
+    }
+    .anchortags a{
+        color: rgb(255, 0, 0);
+        text-decoration: none;
+        }
+    
+    .title{
+        width: fit-content;
+        padding: 10% 1%;
+    }
+
+    .title p{
+        float: left;
+    }
+    
+    
+    .main{    
+        padding: 100px 0;
+        display: flex;
+        height: auto;
+        border-bottom: 3.5px solid rgba(100, 148, 237, 0.299);
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: left;
+    }
+    
+    .main1{
+        display: flex;
+        flex-wrap:wrap;
+        height: 100%;
+        padding: 0px 0px 0px 0px;
+        border-bottom: 3.5px solid rgba(100, 148, 237, 0.299);
+    }
+    
+
+    .title h4{
+        font-size: 28px;
+        top: 18px;
+        position:sticky;
+        text-align: end;
+        color: #00856c;
+    }
+    
+    .navbar{
+        padding: 0 0%;
+        justify-content: space-between;
+        align-items: center;
+        height: 8vh;
+        display: flex;
+        width: 100%;
+    }
+    
+    .navbar p{
+        color: white;
+    }
+    
+    .body{
+        height: auto;
+        width: fit-content;
+        padding: 0;
+    }
+
+    h4{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+  }
+
+
+
+  @media only screen and (max-width: 1450px) {
+
+    .body{
+        padding: 0% 0% 0% 0%;
+        height: auto;
+        width: 100%;
+    }
+     
+  }
+
+  @media only screen and (max-width: 1070px) {
+
+    .body{
+        padding: 0% 0% 0% 0%;
+        height: auto;
+        width: 100%;
+    }
+    .main1{
+        flex-direction: column;
+        padding-top: 0;
+    }
+    .main{
+        flex-direction: column;
+    }
+    .anchortags{
+        padding-left: 0px;
+    }
+    .title{
+        padding: 12% 0%;
+    }
+  }

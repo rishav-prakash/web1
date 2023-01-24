@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% load static %}
+
+    {% block title%}Archive of all Government Job Vacancy- sarkarijob.site{% endblock %}
+    {% block meta-des %}"Archive of all Government job {{type}}, {{Link.0.Title}}-{{type}}...{% endblock %}
+    {% block meta-kw %}"vacancy, result, admitcard, Latest vacancy, government recruitment, government job, archive of {{type}},{{Link.0.Title}} {{type}}, {{Link.1.Title}} {{type}}, {{Link.2.Title}} {{type}}, {{Link.3.Title}} {{type}}, {{Link.4.Title}} {{type}}, {{Link.5.Title}} {{type}}, {{Link.6.Title}} {{type}}, {{Link.7.Title}} {{type}}, {{Link.8.Title}} {{type}}, {{Link.9.Title}} {{type}}, {{Link.10.Title}} {{type}}, {{Link.11.Title}} {{type}}, {{Link.12.Title}} {{type}}, {{Link.13.Title}} {{type}}, {{Link.14.Title}} {{type}}, {{Link.15.Title}} {{type}}"{% endblock %}
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}">
+    <style>
+        .table_row td a{
+        color: rgb(20, 0, 0);
+        font-weight: 700;
+        text-decoration: none;
+        }
+        .tbspan{
+            color: maroon;
+        }
+    </style>
+    {% endblock %}
+    
+    {% block body %}
+        <table class="allLinktable table" id="lbtabletop" onclick="navoff()">
+        <h1 style="padding-top: 20px;"><img style="height: 4vh;" src="../static/img/{{type}}.jpg" alt="vacancy"><br> <span style="font-size: 20px; padding-left: 5px;"> Full List of {{type}}: </span></h1>
+            
+        {% for i in Link %}
+            <tr class="table_row">
+                <td class="lbtitle">{{ forloop.counter }}.</td>
+                <td class="lbtitle"><a href="/post/{{i.Title}}">{{ i.Title }}</a></td>
+                {% if i.Type == 'vacancy' %}
+                <td><span class="tbspan">Last Date: </span>{{i.last_date}}</td>
+                <td ><span class="tbspan">Notification Date: </span> {{i.date_of_issue}}</td>
+                <td><span class="tbspan">Regestration Fee [gen/obc/sc&st]: </span>{{i.rf_gen}}/{{i.rf_obc}}/{{i.rf_scnst}}</td>
+                {% else %}
+                <td><span class="tbspan">Notification Date</span>{{i.date_of_issue}}</td>
+                {% endif %}
+                <td><span class="tbspan">Department: </span>{{i.Department}}</td>
+                <td><span class="tbspan">Region: </span>{{i.State}}</td>
+                <td><span class="tbspan">Total Post: </span>{{i.Posts}}</td>
+                
+            </tr>
+        {% endfor %}
+        </table>
+
+    </div>
+    {% endblock %}
